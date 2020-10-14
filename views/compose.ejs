@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Compose Blog</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <%- include("./partials/header"); -%>
+        <h1> Compose </h1>
+        <form action="/compose" method="POST" autocomplete="off">
+            <div class="form-class">
+                <label for="title">Blog Title</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Blog Title">
+            </div>
+            <div class="form-class">
+                <label for="content">Post</label>
+                <textarea name="content" class="form-control" cols="30" rows="10"></textarea>
+            </div>
+            <button class="btn btn-lg btn-primary" type="submit" name="button" style="margin-top: 2em; background:#b2deec; color: black;">Publish</button>
+        </form>
+        <%- include("./partials/footer"); -%>
+</body>
+
+</html>
