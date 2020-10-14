@@ -57,16 +57,12 @@ app.post("/compose", (req, res) => {
 
 app.get("/posts/:postName", (req, res) => {
     const par = req.params.postName.toLowerCase();
-    array.forEach((elemnet) => {
-        var title = elemnet.title.toLowerCase();
-
-        if (title === par) res.render("post", {
-            title: elemnet.title,
-            content: elemnet.content
-        })
-        else console.log("No match")
+    blogData.findOne({ "title": req.params.postName }, (err, data) => {
+        var title = data.title.toLowerCase();
+        if (title === par) res.render("post", data);
 
     })
+
 
 })
 
