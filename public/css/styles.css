@@ -3,6 +3,10 @@
     padding-bottom: 70px;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 label {
     margin-top: 2em;
     margin-bottom: 1em;

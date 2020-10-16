@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
-const url = "mongodb://127.0.0.1:27017"
+require('dotenv').config()
+const key = process.env.KEY
 
-mongoose.connect("mongodb+srv://admin_ripu:xSjDMwjvb5qd1tyf@cluster1.y3gpy.mongodb.net/blog", {
+mongoose.connect(`mongodb+srv://admin_ripu:${key}@cluster1.y3gpy.mongodb.net/blog`, {
     useNewUrlParser: true,
     useCreateIndex: true
 });
@@ -13,6 +14,9 @@ const blogData = mongoose.model('blogData', {
     },
     content: {
         type: String,
+    },
+    author: {
+        type: String
     }
 })
 
